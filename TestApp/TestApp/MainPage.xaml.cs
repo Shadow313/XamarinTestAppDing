@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SkiaSharp;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,13 @@ namespace TestApp
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        void OnDraw(object sender, EventArgs e)
+        {
+                drawView.Content = new DrawView();
+            
+            
         }
     }
 }

@@ -4,8 +4,29 @@
              xmlns:local="clr-namespace:TestApp"
              x:Class="TestApp.MainPage">
 
-  <Label Text="Welcome to Xamarin Forms!"
+  <StackLayout 
+    x:Name="stackPane"
+           VerticalOptions="Center"
+           HorizontalOptions="Center">
+    <Label Text="Welcome to TestApp"
            VerticalOptions="Center"
            HorizontalOptions="Center" />
+    <Grid
+      RowSpacing="10"
+      ColumnSpacing="10">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="Auto"/>
+      </Grid.ColumnDefinitions>
+
+      <Button Text="Draw"
+              Clicked="OnDraw"
+              Grid.Row="0" Grid.Column ="0"/>
+      <ContentView Grid.Row="0" Grid.Column="1" x:Name="drawView"/>
+    </Grid>
+  </StackLayout>
 
 </ContentPage>
