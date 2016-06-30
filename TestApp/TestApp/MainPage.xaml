@@ -15,11 +15,11 @@
       RowSpacing="10"
       ColumnSpacing="10">
       <Grid.RowDefinitions>
-        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="100"/>
       </Grid.RowDefinitions>
       <Grid.ColumnDefinitions>
         <ColumnDefinition Width="Auto"/>
-        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="100"/>
       </Grid.ColumnDefinitions>
 
       <Button Text="Draw"
