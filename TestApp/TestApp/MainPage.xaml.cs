@@ -17,7 +17,14 @@ namespace TestApp
 
         void OnDraw(object sender, EventArgs e)
         {
+            if(drawView.Content == null)
+            {
+
                 drawView.Content = new DrawView();
+            } else
+            {
+                drawView.Content = null;
+            }
             
             
         }
