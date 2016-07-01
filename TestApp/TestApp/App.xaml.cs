@@ -13,7 +13,7 @@ namespace TestApp
         {
             InitializeComponent();
 
-            MainPage = new TestApp.MainPage();
+            MainPage = GetMainPage();
         }
 
         protected override void OnStart()
@@ -29,6 +29,11 @@ namespace TestApp
         protected override void OnResume()
         {
             // Handle when your app resumes
+        }
+
+        public static Page GetMainPage()
+        {
+            return new MainPage();
         }
     }
 }

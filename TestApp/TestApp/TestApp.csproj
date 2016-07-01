@@ -55,6 +55,12 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Mobile.Core.v16.1">
+      <HintPath>..\..\Components\devexpress-grid-16.1.1.0\lib\pcl\DevExpress.Mobile.Core.v16.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Mobile.Grid.v16.1">
+      <HintPath>..\..\Components\devexpress-grid-16.1.1.0\lib\pcl\DevExpress.Mobile.Grid.v16.1.dll</HintPath>
+    </Reference>
     <Reference Include="SkiaSharp">
       <HintPath>..\..\packages\SkiaSharp.1.49.1.0\lib\portable-net45+xamarinmac+xamarinios+monotouch+monoandroid+win8+wpa81+wp8+xamarin.watchos+xamarin.tvos\SkiaSharp.dll</HintPath>
     </Reference>

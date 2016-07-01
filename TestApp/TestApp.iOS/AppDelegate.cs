@@ -24,7 +24,7 @@ namespace TestApp.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
-
+            DevExpress.Mobile.Forms.Init();
             return base.FinishedLaunching(app, options);
         }
     }

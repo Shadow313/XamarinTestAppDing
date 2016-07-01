@@ -14,6 +14,7 @@ namespace TestApp.Droid
     {
         protected override void OnCreate(Bundle bundle)
         {
+            DevExpress.Mobile.Forms.Init();
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 

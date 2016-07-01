@@ -2,9 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:TestApp"
+             xmlns:dxGrid="clr-namespace:DevExpress.Mobile.DataGrid;assembly=DevExpress.Mobile.Grid.v16.1"
              x:Class="TestApp.MainPage">
 
-  <StackLayout 
+  <StackLayout
     x:Name="stackPane"
            VerticalOptions="Center"
            HorizontalOptions="Center">
@@ -27,6 +28,13 @@
               Grid.Row="0" Grid.Column ="0"/>
       <ContentView Grid.Row="0" Grid.Column="1" x:Name="drawView"/>
     </Grid>
+    <dxGrid:GridControl x:Name="grid" ItemSource="{Binding Entrys}">
+      <dxGrid:GridControl.Columns>
+        <dxGrid:NumberColumn FieldName="Id" Caption="ID" SortOrder="Ascending"/>
+        <dxGrid:TextColumn FieldName="Value" Caption="Value"/>
+        <dxGrid:DateColumn FieldName="Date"/>
+      </dxGrid:GridControl.Columns>
+    </dxGrid:GridControl>
   </StackLayout>
 
 </ContentPage>
