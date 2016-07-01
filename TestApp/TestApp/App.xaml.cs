@@ -13,7 +13,10 @@ namespace TestApp
         {
             InitializeComponent();
 
-            MainPage = GetMainPage();
+            MainPage = new NavigationPage(GetMainPage())
+            {
+                BarBackgroundColor = Color.FromRgb(30, 139, 93)
+            };
         }
 
         protected override void OnStart()

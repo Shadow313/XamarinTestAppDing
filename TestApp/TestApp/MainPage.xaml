@@ -4,37 +4,42 @@
              xmlns:local="clr-namespace:TestApp"
              xmlns:dxGrid="clr-namespace:DevExpress.Mobile.DataGrid;assembly=DevExpress.Mobile.Grid.v16.1"
              x:Class="TestApp.MainPage">
+  <ContentView>
+    <StackLayout
+      x:Name="stackPane">
+     
+      <Grid
+        RowSpacing="10"
+        ColumnSpacing="10"
+        HorizontalOptions="Center">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
 
-  <StackLayout
-    x:Name="stackPane"
-           VerticalOptions="Center"
-           HorizontalOptions="Center">
-    <Label Text="Welcome to TestApp"
-           VerticalOptions="Center"
-           HorizontalOptions="Center" />
-    <Grid
-      RowSpacing="10"
-      ColumnSpacing="10">
-      <Grid.RowDefinitions>
-        <RowDefinition Height="100"/>
-      </Grid.RowDefinitions>
-      <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="Auto"/>
-        <ColumnDefinition Width="100"/>
-      </Grid.ColumnDefinitions>
+        <Button Text="Draw"
+                Clicked="OnDraw"
+                Grid.Row="0" Grid.Column ="0"/>
+        <ContentView Grid.Row="0" Grid.Column="1" x:Name="drawView"/>
+      </Grid>
+      <Grid
+        RowSpacing="10"
+        ColumnSpacing="10">
 
-      <Button Text="Draw"
-              Clicked="OnDraw"
-              Grid.Row="0" Grid.Column ="0"/>
-      <ContentView Grid.Row="0" Grid.Column="1" x:Name="drawView"/>
-    </Grid>
-    <dxGrid:GridControl x:Name="grid" ItemSource="{Binding Entrys}">
-      <dxGrid:GridControl.Columns>
-        <dxGrid:NumberColumn FieldName="Id" Caption="ID" SortOrder="Ascending"/>
-        <dxGrid:TextColumn FieldName="Value" Caption="Value"/>
-        <dxGrid:DateColumn FieldName="Date"/>
-      </dxGrid:GridControl.Columns>
-    </dxGrid:GridControl>
-  </StackLayout>
+      </Grid>
+      <ScrollView>
+        <dxGrid:GridControl x:Name="grid" ItemsSource="{Binding Entrys}">
+          <dxGrid:GridControl.Columns>
+            <dxGrid:NumberColumn FieldName="Id" Caption="ID" Width="50"/>
+            <dxGrid:TextColumn FieldName="Value" Caption="Value"/>
+            <dxGrid:DateColumn FieldName="Date"/>
+          </dxGrid:GridControl.Columns>
+        </dxGrid:GridControl>
+      </ScrollView>
+    </StackLayout>
+  </ContentView>
 
 </ContentPage>
