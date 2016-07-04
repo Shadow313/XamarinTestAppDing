@@ -29,6 +29,7 @@
       <Label Text="LoadTime: -" x:Name ="loadTimeLabel" HorizontalOptions="Center"/>
     <Button Text="Show Table" Clicked="OnShowTable"/>
     <Label Text="Table Load Time: -" x:Name ="tableLoadtimeLabel" HorizontalOptions ="Center"/>
+    <Label Text="No request yet." x:Name="responseLabel"/>
     </StackLayout>
   </ContentView>
 

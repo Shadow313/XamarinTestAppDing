@@ -7,6 +7,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using System.Net;
 
 namespace TestApp
 {
@@ -15,20 +16,16 @@ namespace TestApp
         HttpClient client;
         const String Username = "user";
         const String Password = "password";
-        const String RestUrl = "127.0.0.1";
+        const String RestUrl = "http://192.168.0.70:8080/hello";
         public List<ListEntry> items { get; private set; }
 
         public RestService()
         {
-            var authData = string.Format("{0}:{1}", Username, Password);
-            var authHeaderValue = Convert.ToBase64String(Encoding.UTF8.GetBytes(authData));
-
             client = new HttpClient();
-            client.MaxResponseContentBufferSize = 256000;
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", authHeaderValue);
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        public async Task<List<ListEntry>> RefreshDataAsync()
+        /*public async Task<List<ListEntry>> RefreshDataAsync()
         {
             items = new List<ListEntry>();
             var uri = new Uri(string.Format(RestUrl, string.Empty));
@@ -47,6 +44,26 @@ namespace TestApp
                 Debug.WriteLine(@"				ERROR {0}", ex.Message);
             }
 
+            return items;
+        }*/
+
+        public async Task<List<ListEntry>> RefreshDataAsync()
+        {
+            List<ListEntry> items = null;
+            var uri = new Uri(string.Format(RestUrl, string.Empty));
+            try
+            {
+                var response = await client.GetAsync(uri);
+                if(response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    items = JsonConvert.DeserializeObject<List<ListEntry>>(content);
+                }
+            }
+            catch(Exception e)
+            {
+                Debug.WriteLine(@"Error", e.Message);
+            }
             return items;
         }
 

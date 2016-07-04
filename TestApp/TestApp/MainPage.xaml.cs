@@ -1,4 +1,5 @@
-﻿using SkiaSharp;
+﻿using Newtonsoft.Json;
+using SkiaSharp;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -16,7 +17,7 @@ namespace TestApp
         public MainPage()
         {
             InitializeComponent();
-            Title = "TPC Mainscreen";           
+            Title = "TPC Mainscreen";
         }
 
         void OnDraw(object sender, EventArgs e)
@@ -34,10 +35,24 @@ namespace TestApp
 
         }
 
-        void OnLoadTableData(object sender, EventArgs e)
+        async void OnLoadTableData(object sender, EventArgs e)
         {
+            /*var testList = new ObservableCollection<ListEntry>();
+            testList.Add(new ListEntry(0, "Some Value", DateTime.Now));
+            testList.Add(new ListEntry(1, "Some other value", DateTime.Now));
+            var json = JsonConvert.SerializeObject(testList);
+            responseLabel.Text = json;*/
+            RestService service = new RestService();
+            var newItems = await service.RefreshDataAsync();
             var watch = System.Diagnostics.Stopwatch.StartNew();
-            list = new GridList();
+            if (list == null)
+            {
+                list = new GridList(newItems);
+            }
+            else
+            {
+                list.Add(newItems);
+            }
             watch.Stop();
             loadTimeLabel.Text = "Load Time: " + watch.ElapsedMilliseconds + " ms";
         }
@@ -53,7 +68,7 @@ namespace TestApp
         }
     }
 
-    public class ListEntry: INotifyPropertyChanged
+    public class ListEntry : INotifyPropertyChanged
     {
         private DateTime date;
         private String value;
@@ -65,7 +80,7 @@ namespace TestApp
             this.date = date;
             this.id = id;
             this.value = value;
-            if(date == null)
+            if (date == null)
             {
                 date = DateTime.Now;
             }
@@ -79,40 +94,48 @@ namespace TestApp
         public DateTime Date
         {
             get { return date; }
-            set {if(value != null && date != value)
+            set
+            {
+                if (value != null && date != value)
                 {
                     date = value;
                     RaisePropertyChanged("Date");
-                } }
+                }
+            }
         }
 
         public String Value
         {
             get { return value; }
-            set { if (value != null && value != this.value)
+            set
+            {
+                if (value != null && value != this.value)
                 {
                     this.value = value;
                     RaisePropertyChanged("Value");
-                } }
+                }
+            }
         }
 
         public int Id
         {
             get { return id; }
-            set { if(value != id)
+            set
+            {
+                if (value != id)
                 {
                     id = value;
                     RaisePropertyChanged("Id");
-                } }
+                }
+            }
         }
-    
-   }
+
+    }
 
     public class GridList
     {
         readonly ObservableCollection<ListEntry> entrys;
         const int entryCount = 1000;
-        private List<ListEntry> items;
 
         public GridList()
         {
@@ -120,9 +143,19 @@ namespace TestApp
             GenerateEntrys();
         }
 
-        public GridList(List<ListEntry> items)
+        public GridList(ListEntry newItem)
         {
-            this.items = items;
+            this.entrys = new ObservableCollection<ListEntry>();
+            entrys.Add(newItem);
+        }
+
+        public GridList(List<ListEntry> newItems)
+        {
+            this.entrys = new ObservableCollection<ListEntry>();
+            foreach (ListEntry curEntry in newItems)
+            {
+                entrys.Add(curEntry);
+            }
         }
 
         public ObservableCollection<ListEntry> Entrys
@@ -133,10 +166,23 @@ namespace TestApp
         void GenerateEntrys()
         {
             DateTime baseDate = DateTime.Now;
-            for(int i = 0; i < entryCount; i++)
+            for (int i = 0; i < entryCount; i++)
             {
                 ListEntry newEntry = new ListEntry(i, "Item " + i, baseDate.AddDays(i));
                 entrys.Add(newEntry);
+            }
+        }
+
+        internal void Add(ListEntry newItem)
+        {
+            entrys.Add(newItem);
+        }
+
+        internal void Add(List<ListEntry> newItems)
+        {
+            foreach (ListEntry curEntry in newItems)
+            {
+                entrys.Add(curEntry);
             }
         }
     }
