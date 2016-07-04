@@ -16,7 +16,7 @@ namespace TestApp
         public MainPage()
         {
             InitializeComponent();
-            Title = "TPC TestApp";           
+            Title = "TPC Mainscreen";           
         }
 
         void OnDraw(object sender, EventArgs e)
