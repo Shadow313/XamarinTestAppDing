@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestApp.GridPage"
+             xmlns:dxGrid="clr-namespace:DevExpress.Mobile.DataGrid;assembly=DevExpress.Mobile.Grid.v16.1">
+  <dxGrid:GridControl x:Name="grid" ItemsSource="{Binding Entrys}">
+    <dxGrid:GridControl.Columns>
+      <dxGrid:NumberColumn FieldName="Id" Caption="ID" Width="50"/>
+      <dxGrid:TextColumn FieldName="Value" Caption="Value"/>
+      <dxGrid:DateColumn FieldName="Date"/>
+    </dxGrid:GridControl.Columns>
+  </dxGrid:GridControl>
+</ContentPage>

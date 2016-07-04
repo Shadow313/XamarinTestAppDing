@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:TestApp"
-             xmlns:dxGrid="clr-namespace:DevExpress.Mobile.DataGrid;assembly=DevExpress.Mobile.Grid.v16.1"
+             
              x:Class="TestApp.MainPage">
   <ContentView>
     <StackLayout
@@ -25,20 +25,10 @@
                 Grid.Row="0" Grid.Column ="0"/>
         <ContentView Grid.Row="0" Grid.Column="1" x:Name="drawView"/>
       </Grid>
-      <Grid
-        RowSpacing="10"
-        ColumnSpacing="10">
-
-      </Grid>
-      <ScrollView>
-        <dxGrid:GridControl x:Name="grid" ItemsSource="{Binding Entrys}">
-          <dxGrid:GridControl.Columns>
-            <dxGrid:NumberColumn FieldName="Id" Caption="ID" Width="50"/>
-            <dxGrid:TextColumn FieldName="Value" Caption="Value"/>
-            <dxGrid:DateColumn FieldName="Date"/>
-          </dxGrid:GridControl.Columns>
-        </dxGrid:GridControl>
-      </ScrollView>
+    <Button Text="Load Table Data" Clicked="OnLoadTableData"/>
+      <Label Text="LoadTime: -" x:Name ="loadTimeLabel" HorizontalOptions="Center"/>
+    <Button Text="Show Table" Clicked="OnShowTable"/>
+    <Label Text="Table Load Time: -" x:Name ="tableLoadtimeLabel" HorizontalOptions ="Center"/>
     </StackLayout>
   </ContentView>
 

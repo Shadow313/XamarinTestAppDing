@@ -12,15 +12,13 @@ namespace TestApp
 {
     public partial class MainPage : ContentPage
     {
+        private GridList list;
         public MainPage()
         {
             InitializeComponent();
             Title = "TPC TestApp";
             BackgroundColor = Color.FromRgb(30, 139, 91);
-            GridList model = new GridList();
-            BindingContext = model;
-            grid.AllowEditRows = false;
-            grid.BackgroundColor = Color.FromRgb(30, 139, 91);
+            
         }
 
         void OnDraw(object sender, EventArgs e)
@@ -36,6 +34,24 @@ namespace TestApp
             }
 
 
+        }
+
+        void OnLoadTableData(object sender, EventArgs e)
+        {
+            var watch = System.Diagnostics.Stopwatch.StartNew();
+            list = new GridList();
+            watch.Stop();
+            loadTimeLabel.Text = "Load Time: " + watch.ElapsedMilliseconds + " ms";
+        }
+
+        async void OnShowTable(object sender, EventArgs e)
+        {
+            var watch = System.Diagnostics.Stopwatch.StartNew();
+            var tablePage = new GridPage();
+            tablePage.BindingContext = list;
+            watch.Stop();
+            tableLoadtimeLabel.Text = "Table Load Time: " + watch.ElapsedMilliseconds + " ms";
+            await Navigation.PushAsync(tablePage);
         }
     }
 
