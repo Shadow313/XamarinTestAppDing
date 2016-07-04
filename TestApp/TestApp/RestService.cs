@@ -16,7 +16,7 @@ namespace TestApp
         HttpClient client;
         const String Username = "user";
         const String Password = "password";
-        const String RestUrl = "http://192.168.0.70:8080/hello";
+        const String RestUrl = "http://192.168.0.70:8080/sven";
         public List<ListEntry> items { get; private set; }
 
         public RestService()
