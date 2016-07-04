@@ -16,9 +16,7 @@ namespace TestApp
         public MainPage()
         {
             InitializeComponent();
-            Title = "TPC TestApp";
-            BackgroundColor = Color.FromRgb(30, 139, 91);
-            
+            Title = "TPC TestApp";           
         }
 
         void OnDraw(object sender, EventArgs e)
@@ -113,12 +111,18 @@ namespace TestApp
     public class GridList
     {
         readonly ObservableCollection<ListEntry> entrys;
-        const int entryCount = 100;
+        const int entryCount = 1000;
+        private List<ListEntry> items;
 
         public GridList()
         {
             this.entrys = new ObservableCollection<ListEntry>();
             GenerateEntrys();
+        }
+
+        public GridList(List<ListEntry> items)
+        {
+            this.items = items;
         }
 
         public ObservableCollection<ListEntry> Entrys
