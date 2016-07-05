@@ -66,6 +66,16 @@ namespace TestApp
             tableLoadtimeLabel.Text = "Table Load Time: " + watch.ElapsedMilliseconds + " ms";
             await Navigation.PushAsync(tablePage);
         }
+
+        async void OnShowList(object sender, EventArgs e)
+        {
+            var watch = System.Diagnostics.Stopwatch.StartNew();
+            var listPage = new ListView();
+            listPage.BindingContext = list;
+            watch.Stop();
+            tableLoadtimeLabel.Text = "List Load Time: " + watch.ElapsedMilliseconds + " ms";
+            await Navigation.PushAsync(listPage);
+        }
     }
 
     public class ListEntry : INotifyPropertyChanged
