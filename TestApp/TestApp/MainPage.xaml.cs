@@ -42,9 +42,9 @@ namespace TestApp
             testList.Add(new ListEntry(1, "Some other value", DateTime.Now));
             var json = JsonConvert.SerializeObject(testList);
             responseLabel.Text = json;*/
+            var watch = System.Diagnostics.Stopwatch.StartNew();
             RestService service = new RestService();
             var newItems = await service.RefreshDataAsync();
-            var watch = System.Diagnostics.Stopwatch.StartNew();
             if (list == null)
             {
                 list = new GridList(newItems);
