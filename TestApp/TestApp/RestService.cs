@@ -25,28 +25,6 @@ namespace TestApp
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        /*public async Task<List<ListEntry>> RefreshDataAsync()
-        {
-            items = new List<ListEntry>();
-            var uri = new Uri(string.Format(RestUrl, string.Empty));
-
-            try
-            {
-                var response = await client.GetAsync(uri);
-                if (response.IsSuccessStatusCode)
-                {
-                    var content = await response.Content.ReadAsStringAsync();
-                    items = JsonConvert.DeserializeObject<List<ListEntry>>(content);
-                }
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(@"				ERROR {0}", ex.Message);
-            }
-
-            return items;
-        }*/
-
         public async Task<List<ListEntry>> RefreshDataAsync()
         {
             List<ListEntry> items = null;
