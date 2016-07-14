@@ -5,16 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Xamarin.Forms;
-
 namespace TestApp
 {
-    public partial class GridPage : ContentPage
+    class Class1
     {
-        public GridPage()
-        {
-            InitializeComponent();
-            Title = "Tablepage";
-        }
     }
 }

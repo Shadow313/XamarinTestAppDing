@@ -136,6 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="TestApp.WinPhone.licenseheader" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TestApp\TestApp.csproj">

@@ -1,4 +1,5 @@
-﻿using System;
+﻿// Copyright (c) 2016 Tunnelsoft
+using System;
 using Android.Views;
 using Android.Graphics;
 using SkiaSharp;

@@ -1,4 +1,5 @@
-﻿using SkiaSharp;
+﻿// Copyright (c) 2016 Tunnelsoft
+using SkiaSharp;
 using Xamarin.Forms;
 
 namespace TestApp

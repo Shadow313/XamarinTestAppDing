@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿// Copyright (c) 2016 Tunnelsoft
+using Newtonsoft.Json;
 using SkiaSharp;
 using System;
 using System.Collections.Generic;

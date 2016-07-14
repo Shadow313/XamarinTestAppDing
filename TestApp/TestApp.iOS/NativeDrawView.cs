@@ -1,4 +1,5 @@
-﻿using System;
+﻿// Copyright (c) 2016 Tunnelsoft
+using System;
 using CoreGraphics;
 using UIKit;
 using SkiaSharp;

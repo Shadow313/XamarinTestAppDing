@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿// Copyright (c) 2016 Tunnelsoft
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 

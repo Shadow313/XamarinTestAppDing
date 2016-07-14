@@ -1,3 +1,4 @@
+// Copyright (c) 2016 Tunnelsoft
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 

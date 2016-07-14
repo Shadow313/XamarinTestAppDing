@@ -1,4 +1,5 @@
-﻿using System;
+﻿// Copyright (c) 2016 Tunnelsoft
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -32,13 +33,13 @@ namespace TestApp
             try
             {
                 var response = await client.GetAsync(uri);
-                if(response.IsSuccessStatusCode)
+                if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
                     items = JsonConvert.DeserializeObject<List<ListEntry>>(content);
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Debug.WriteLine(@"Error", e.Message);
             }
