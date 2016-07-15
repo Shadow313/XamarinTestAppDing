@@ -2,19 +2,15 @@
 using SkiaSharp;
 using Xamarin.Forms;
 
-namespace com.tunnelsoft.testapp.view
-{
-    public class DrawView : View
-    {
-        public void SendDraw(SKCanvas canvas)
-        {
+namespace com.tunnelsoft.testapp.view {
+    public class DrawView: View {
+        public void SendDraw(SKCanvas canvas) {
             Draw(canvas);
         }
-        private void Draw(SKCanvas canvas)
-        {
+        private void Draw(SKCanvas canvas) {
             canvas.Clear(SKColors.White);
-            var width = (int)Width;
-            var height = (int)Height;
+            var width = (int) Width;
+            var height = (int) Height;
             var paddingFactor = .6f;
             var imageLeft = 41.6587026f;
             var imageRight = 144.34135f;
@@ -23,7 +19,7 @@ namespace com.tunnelsoft.testapp.view
 
             var imageWidth = imageRight - imageLeft;
 
-            var scale = (((float)height > width ? width : height) / imageWidth) * paddingFactor;
+            var scale = (((float) height > width ? width : height) / imageWidth) * paddingFactor;
 
             var translateX = (imageLeft + imageRight) / -2 + width / scale * 1 / 2;
             var translateY = (imageBottom + imageTop) / -2 + height / scale * 1 / 2;
@@ -32,8 +28,7 @@ namespace com.tunnelsoft.testapp.view
             canvas.Translate(translateX, translateY);
 
 
-            using (var paint = new SKPaint())
-            {
+            using (var paint = new SKPaint()) {
                 paint.IsAntialias = true;
                 paint.Color = SKColors.White;
                 canvas.DrawPaint(paint);
@@ -42,8 +37,7 @@ namespace com.tunnelsoft.testapp.view
                 var t = paint.StrokeCap;
 
 
-                using (var path = new SKPath())
-                {
+                using (var path = new SKPath()) {
                     path.MoveTo(71.4311121f, 56f);
                     path.CubicTo(68.6763107f, 56.0058575f, 65.9796704f, 57.5737917f, 64.5928855f, 59.965729f);
                     path.LineTo(43.0238921f, 97.5342563f);
@@ -64,8 +58,7 @@ namespace com.tunnelsoft.testapp.view
 
                 }
 
-                using (var path = new SKPath())
-                {
+                using (var path = new SKPath()) {
 
                     path.MoveTo(71.8225901f, 77.9780432f);
                     path.CubicTo(71.8818491f, 77.9721857f, 71.9440029f, 77.9721857f, 72.0034464f, 77.9780432f);
@@ -101,5 +94,5 @@ namespace com.tunnelsoft.testapp.view
                 }
             }
         }
-        }
     }
+}

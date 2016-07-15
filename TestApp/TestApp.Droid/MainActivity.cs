@@ -9,13 +9,10 @@ using Android.Widget;
 using Android.OS;
 using com.tunnelsoft.testapp;
 
-namespace TestApp.Droid
-{
+namespace TestApp.Droid {
     [Activity(Label = "TestApp", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
-    {
-        protected override void OnCreate(Bundle bundle)
-        {
+    public class MainActivity: global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity {
+        protected override void OnCreate(Bundle bundle) {
             DevExpress.Mobile.Forms.Init();
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;

@@ -7,12 +7,9 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
-namespace com.tunnelsoft.testapp.view
-{
-    public partial class ListView : ContentPage
-    {
-        public ListView()
-        {
+namespace com.tunnelsoft.testapp.view {
+    public partial class ListView: ContentPage {
+        public ListView() {
             InitializeComponent();
             ItemView.SeparatorColor = Color.FromRgb(30, 139, 91);
         }

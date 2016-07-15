@@ -7,12 +7,9 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
-namespace com.tunnelsoft.testapp.view
-{
-    public partial class GridPage : ContentPage
-    {
-        public GridPage()
-        {
+namespace com.tunnelsoft.testapp.view {
+    public partial class GridPage: ContentPage {
+        public GridPage() {
             InitializeComponent();
             Title = "Tablepage";
         }
