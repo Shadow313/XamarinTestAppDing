@@ -1,13 +1,9 @@
 ﻿// Copyright (c) 2016 Tunnelsoft
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using com.tunnelsoft.testapp.view;
 
 using Xamarin.Forms;
 
-namespace TestApp
-{
+namespace com.tunnelsoft.testapp {
     public partial class App : Application
     {
         public App()

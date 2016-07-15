@@ -3,6 +3,7 @@ using System;
 using Android.Views;
 using Android.Graphics;
 using SkiaSharp;
+using com.tunnelsoft.testapp.view;
 
 namespace TestApp.Droid
 {

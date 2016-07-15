@@ -2,8 +2,9 @@
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
+using com.tunnelsoft.testapp.view;
 
-[assembly: ExportRenderer(typeof(TestApp.DrawView), typeof(TestApp.iOS.DrawViewRenderer))]
+[assembly: ExportRenderer(typeof(DrawView), typeof(TestApp.iOS.DrawViewRenderer))]
 
 namespace TestApp.iOS
 {

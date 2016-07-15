@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
-namespace TestApp
+namespace com.tunnelsoft.testapp.view
 {
-    public partial class GridPage : ContentPage
+    public partial class ListView : ContentPage
     {
-        public GridPage()
+        public ListView()
         {
             InitializeComponent();
-            Title = "Tablepage";
+            ItemView.SeparatorColor = Color.FromRgb(30, 139, 91);
         }
     }
 }

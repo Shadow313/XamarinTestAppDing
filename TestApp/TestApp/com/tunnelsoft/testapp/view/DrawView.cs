@@ -2,7 +2,7 @@
 using SkiaSharp;
 using Xamarin.Forms;
 
-namespace TestApp
+namespace com.tunnelsoft.testapp.view
 {
     public class DrawView : View
     {

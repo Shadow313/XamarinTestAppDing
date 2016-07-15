@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TestApp.GridPage"
+             x:Class="com.tunnelsoft.testapp.view.GridPage"
              xmlns:dxGrid="clr-namespace:DevExpress.Mobile.DataGrid;assembly=DevExpress.Mobile.Grid.v16.1">
   <dxGrid:GridControl x:Name="grid" ItemsSource="{Binding Entrys}">
     <dxGrid:GridControl.Columns>

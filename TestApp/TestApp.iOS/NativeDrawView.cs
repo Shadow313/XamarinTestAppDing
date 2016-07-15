@@ -3,6 +3,7 @@ using System;
 using CoreGraphics;
 using UIKit;
 using SkiaSharp;
+using com.tunnelsoft.testapp.view;
 
 namespace TestApp.iOS
 {

@@ -22,7 +22,7 @@ namespace TestApp.Windows
         {
             this.InitializeComponent();
 
-            LoadApplication(new TestApp.App());
+            LoadApplication(new com.tunnelsoft.testapp.App());
         }
     }
 }

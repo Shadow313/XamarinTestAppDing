@@ -29,7 +29,7 @@ namespace TestApp.WinPhone
 
             this.NavigationCacheMode = NavigationCacheMode.Required;
 
-            LoadApplication(new TestApp.App());
+            LoadApplication(new com.tunnelsoft.testapp.App());
         }
 
         /// <summary>

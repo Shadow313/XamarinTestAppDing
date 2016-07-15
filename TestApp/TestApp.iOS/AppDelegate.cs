@@ -24,7 +24,7 @@ namespace TestApp.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App());
+            LoadApplication(new com.tunnelsoft.testapp.App());
             DevExpress.Mobile.Forms.Init();
             return base.FinishedLaunching(app, options);
         }
